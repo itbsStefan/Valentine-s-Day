@@ -159,9 +159,15 @@ body::before {
     >here</a>
     </p>
     */
-      document.getElementById('light').style.display='block';
-      document.getElementById('fade').style.display='block';
-      $('body').addClass('valentine');
+      var a = window.location.href.lastIndexOf('#') 
+      if(a > 10) {
+        var l = window.location.href.substring(a+1);
+        selectLang(l)
+      } else {
+        document.getElementById('light').style.display='block';
+        document.getElementById('fade').style.display='block';
+        $('body').addClass('valentine');
+      }
     } 
     setTimeout(start, 300)
     
