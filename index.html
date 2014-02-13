@@ -88,15 +88,19 @@ body::before {
       case 'deutsch':
         dialog = "Magst Du mein Valentine sein? Ja, Nein, Vielleicht?";
       break;
-      case 'französisch':
-        dialog = "Aurait-tu être mon Valentin? Oui, Non, Peut-être?";
+      case 'englisch':
+        dialog = "Will you be my valentine? Yes, No, Maybe?";
       break;
       default:
-        dialog = "Will you be my valentine? Yes, No, Maybe?";
+        dialog = "Aurait-tu être mon Valentin? Oui, Non, Peut-être?";
     }
     var answer = prompt(dialog)
     if (answer == null) {
-      //setTimeout(beardedBoo, 100);
+      var a = window.location.href.lastIndexOf('#') 
+      if(a > 10) {
+        var url = window.location.href.substring(0,a);
+        window.location.href = url;
+      }
       document.location.reload(true);
       return false;
     }
@@ -112,11 +116,11 @@ body::before {
         case 'deutsch':
           dialog = "Vielleicht sind Dir die vielen Vorteile nicht bewusst.";
         break;
-        case 'französisch':
-          dialog = "Peut-être tu n'êtes pas au courant des nombreux avantages.";
+        case 'englisch':
+          dialog = "Perhaps you are not aware of the many benefits.";
         break;
         default:
-          dialog = "Perhaps you are not aware of the many benefits.";
+          dialog = "Peut-être tu n'êtes pas au courant des nombreux avantages.";
       }
 /* I WANTED THE BG TO CHANGE BEFORE THE ALERT AND THE IMAGE AFTER THE PROMPT AND THE NEXT PROMPT AFTER THAT! I LEARNED THAT IF ALERT AD IMAGE ARE NOT IN THE setTimeout TOGETHER, IT DOES THEM AT THE SAME TIME. */
 			if(confirm(dialog)) {
@@ -134,11 +138,11 @@ body::before {
         case 'deutsch':
           dialog = "Sag, daß es nicht so ist. Bitte versuche es erneut!";
         break;
-        case 'französisch':
-          dialog = "Disons que c'est pas le cas. S'il te plaît essayez de nouveau!";
+        case 'englisch':
+          dialog = "Say it isn't so. Please try again!";
         break;
         default:
-          dialog = "Say it isn't so. Please try again!";
+          dialog = "Disons que c'est pas le cas. S'il te plaît essayez de nouveau!";
       }
 			if(confirm(dialog)) {
         setTimeout(beardedBoo, 300);
