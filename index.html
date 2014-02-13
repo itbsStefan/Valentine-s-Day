@@ -98,8 +98,9 @@ body::before {
     if (answer == null) {
       var a = window.location.href.lastIndexOf('#');
       if(a > 10) {
-        location = "";
         var url = window.location.href.substring(0,a);
+        location = "";
+        sleep(30);
         document.location.href = url;
       }
       document.location.reload(false);
