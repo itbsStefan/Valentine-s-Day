@@ -96,12 +96,13 @@ body::before {
     }
     var answer = prompt(dialog)
     if (answer == null) {
-      var a = window.location.href.lastIndexOf('#') 
+      var a = window.location.href.lastIndexOf('#');
       if(a > 10) {
+        location = "";
         var url = window.location.href.substring(0,a);
-        window.location.href = url;
+        document.location.href = url;
       }
-      document.location.reload(true);
+      document.location.reload(false);
       return false;
     }
     answer = answer.toLowerCase()
@@ -127,7 +128,7 @@ body::before {
   			image.addClass("benefits")
         setTimeout(beardedBoo, 4000);
       } else {
-        document.location.reload(true);
+        document.location.reload(false);
       }	
       
 /* HEY!!! */
@@ -147,7 +148,7 @@ body::before {
 			if(confirm(dialog)) {
         setTimeout(beardedBoo, 300);
       } else {
-        document.location.reload(true);
+        document.location.reload(false);
       }
 		} else {
 		  setTimeout(beardedBoo, 2500);
